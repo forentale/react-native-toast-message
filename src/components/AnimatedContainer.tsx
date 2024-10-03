@@ -59,10 +59,10 @@ export function animatedValueFor(
 
   switch (position) {
     case 'bottom':
-      if (!numberActiveTouches && dy === 0) return boundValue(0);
+      if (!numberActiveTouches) return boundValue(0);
       return boundValue(1 - dy / damping);
     case 'top':
-      if (!numberActiveTouches && dy === 0) return boundValue(0);
+      if (!numberActiveTouches) return boundValue(0);
       return boundValue(1 + dy / damping);
     default:
       throw new Error(`Toast position: ${position} not implemented`);
